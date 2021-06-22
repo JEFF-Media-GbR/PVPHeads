@@ -2,6 +2,7 @@ name: PVPHeads
 author: mfnalex
 main: de.jeff_media.pvpheads.PVPHeads
 version: 1.0.0
+api-version: "1.13"
 depend:
   - Vault
 commands:

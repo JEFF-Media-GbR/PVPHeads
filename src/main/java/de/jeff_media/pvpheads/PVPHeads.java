@@ -3,6 +3,7 @@ package de.jeff_media.pvpheads;
 import de.jeff_media.jefflib.SkullUtils;
 import lombok.Getter;
 import net.milkbowl.vault.economy.Economy;
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,6 +22,10 @@ public class PVPHeads extends JavaPlugin implements Listener {
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
         economy = rsp.getProvider();
 
+        saveDefaultConfig();
+        reloadConfig();
+
+        Bukkit.getPluginManager().registerEvents(this, this);
         getCommand("sellhand").setExecutor(new SellHeadCommand());
     }
 

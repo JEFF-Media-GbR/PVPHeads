@@ -9,12 +9,15 @@ public class Utils {
     private static final Random rand = new Random();
 
     public static boolean dropChanceSuccess(Player player) {
-        return rand.nextInt(100) <= getDropChance(player);
+        boolean result = rand.nextInt(100) <= getDropChance(player);
+        System.out.println("Drop chance success: " +  result);
+        return result;
     }
 
     private static int getDropChance(Player player) {
         for(int i = 100; i > 0; i--) {
             if(player.hasPermission("pvpheads.dropchance."+i)) {
+                System.out.println("Player " + player.getName() + " has a drop chance of " + i + "%");
                 return i;
             }
         }
