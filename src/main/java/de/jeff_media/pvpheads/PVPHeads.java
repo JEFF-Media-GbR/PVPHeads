@@ -26,7 +26,7 @@ public class PVPHeads extends JavaPlugin implements Listener {
         reloadConfig();
 
         Bukkit.getPluginManager().registerEvents(this, this);
-        getCommand("sellhand").setExecutor(new SellHeadCommand());
+        getCommand("sellhead").setExecutor(new SellHeadCommand());
     }
 
     @EventHandler

@@ -3,5 +3,5 @@
 # E.g. when they have "pvpheads.dropchance.100", they always get the head of their victim
 
 # Price to sell heads for
-price-min: 100
-price-max: 1000
+min-price: 100
+max-price: 1000

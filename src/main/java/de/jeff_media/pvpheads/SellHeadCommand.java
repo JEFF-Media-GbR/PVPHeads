@@ -12,14 +12,14 @@ public class SellHeadCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String alias, @NotNull String[] args) {
 
+        System.out.println("sellhead command called");
+
         if(!(sender instanceof Player)) {
+            System.out.println("This command can only be run by players");
             return true;
         }
 
         Player player = (Player) sender;
-
-
-
         ItemStack hand = player.getInventory().getItemInMainHand();
 
         if(hand.getType() != Material.PLAYER_HEAD) {
@@ -28,6 +28,7 @@ public class SellHeadCommand implements CommandExecutor {
         }
 
         int sellPrice = Utils.getSellPrice();
+        System.out.println("Sell price: " + sellPrice);
         hand.setAmount(hand.getAmount()-1);
         PVPHeads.getEconomy().depositPlayer(player, sellPrice);
         player.sendMessage("§aYou sold a head for " + sellPrice + ".");

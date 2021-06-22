@@ -3,6 +3,7 @@ package de.jeff_media.pvpheads;
 import org.bukkit.entity.Player;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Utils {
 
@@ -26,7 +27,9 @@ public class Utils {
 
     public static int getSellPrice() {
         int maxPrice = PVPHeads.getInstance().getConfig().getInt("max-price");
-        int minPrice = PVPHeads.getInstance().getConfig().getInt("max-price");
-        return rand.nextInt(maxPrice - minPrice + 1) - minPrice;
+        int minPrice = PVPHeads.getInstance().getConfig().getInt("min-price");
+        int result = ThreadLocalRandom.current().nextInt(minPrice, maxPrice+1);
+        System.out.println("Sell price: " + result);
+        return result;
     }
 }
