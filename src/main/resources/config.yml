@@ -1,0 +1,7 @@
+# To adjust the drop chance:
+# Give your players the permission "pvpheads.dropchance.<percentage>"
+# E.g. when they have "pvpheads.dropchance.100", they always get the head of their victim
+
+# Price to sell heads for
+price-min: 100
+price-max: 1000

@@ -1,0 +1,8 @@
+name: PVPHeads
+author: mfnalex
+main: de.jeff_media.pvpheads.PVPHeads
+version: 1.0.0
+depend:
+  - Vault
+commands:
+  sellhead:
